@@ -39,20 +39,20 @@ class _HomePageState extends State<HomePage> {
     controller = Controller(
       items: [
         //
-        PlayerItem(
-          title: 'video 1',
-          url:
-              'https://westream.ariablue.com/fe313e10-72a7-4c10-a978-aa28d15b4c12',
-          // subtitleUrl: "https://wecast.ch/posters/vt.vtt",
-        ),
         // PlayerItem(
-        //   startAt: Duration(seconds: 2),
-        //   title: 'video 2',
-        //   aspectRatio: 16 / 4,
+        //   title: 'video 1',
         //   url:
-        //       'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
-        //   subtitleUrl: "https://wecast.ch/posters/vtt.vtt",
+        //       'https://westream.ariablue.com/fe313e10-72a7-4c10-a978-aa28d15b4c12',
+        //   // subtitleUrl: "https://wecast.ch/posters/vt.vtt",
         // ),
+        PlayerItem(
+          startAt: Duration(seconds: 2),
+          title: 'video 2',
+          aspectRatio: 16 / 4,
+          url:
+              'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+          subtitleUrl: "https://wecast.ch/posters/vtt.vtt",
+        ),
         // PlayerItem(
         //   title: 'video 3',
         //   aspectRatio: 16 / 9,

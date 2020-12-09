@@ -49,9 +49,10 @@ class _TvTopBarState extends State<TvTopBar> {
                 padding: EdgeInsets.symmetric(horizontal: 22),
                 child: BlocListener<PlayerItemBloc, PlayerItemState>(
                     listener: (context, state) {
-                      if (state is PlayerItemLoaded)
+                      if (state is PlayerItemLoaded &&
+                          state?.playerItem != null)
                         setState(() {
-                          title = state?.playerItem?.title;
+                          title = state.playerItem?.title;
                         });
                     },
                     child: Text(
