@@ -150,4 +150,9 @@ class Controller extends Equatable {
   void setIndex(int index) {
     view.setIndex(index);
   }
+
+  bool biggerThanOne() => this.items.length > 1;
+
+  bool hasNextVideo() => biggerThanOne() && this.index != this.items.length - 1;
+  bool hasPrevVideo() => biggerThanOne() && this.index != 0;
 }

@@ -45,15 +45,11 @@ class _PhoneHomeState extends State<PhoneHome> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        !_controller.showSkipButtons
-                            ? Container()
-                            : PreviousButton(isRtl: _controller.isRtl),
+                        PreviousButton(_controller),
                         SizedBox(width: 15),
                         PlayButton(),
                         SizedBox(width: 15),
-                        !_controller.showSkipButtons
-                            ? Container()
-                            : NextButton(isRtl: _controller.isRtl),
+                        NextButton(_controller),
                       ],
                     ),
                     // Container(child: BrightnessSlider()),

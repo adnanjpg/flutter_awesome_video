@@ -199,17 +199,13 @@ class _VideoPlayerInterfaceState extends State<VideoPlayerInterface>
     await _videoPlayerController.setLooping(_controller.isLooping);
 
     if ((_controller.autoInitialize || _controller.autoPlay) &&
-        !_videoPlayerController.value.initialized) {
+        !_videoPlayerController.value.initialized)
       await _videoPlayerController.initialize();
-    }
 
-    if (!_controller.autoPlay && !_videoPlayerController.value.initialized) {
+    if (!_controller.autoPlay && !_videoPlayerController.value.initialized)
       await _videoPlayerController.initialize();
-    }
 
-    if (_controller.autoPlay) {
-      await _videoPlayerController.play();
-    }
+    if (_controller.autoPlay) await _videoPlayerController.play();
 
     if (_controller.items[_index].startAt != null)
       await _videoPlayerController.seekTo(_controller.items[_index].startAt);
@@ -524,11 +520,10 @@ class _VideoPlayerInterfaceState extends State<VideoPlayerInterface>
       // rewind
       int value = ((80) * percentage ~/ 100).abs();
       print(value.toString());
-      if (value < 0) {
+      if (value < 0)
         fastRewind(0);
-      } else {
+      else
         fastRewind(value);
-      }
     }
   }
 
@@ -605,6 +600,7 @@ class _VideoPlayerInterfaceState extends State<VideoPlayerInterface>
     else if (skip == Skip.PREVIOUS && _index > 0)
       _index = _index - 1;
     else if (skip == Skip.RESTART) _index = 0;
+    setState(() => _controller.index = _index);
   }
 
   void changeVideo(String link, Skip skip) async {

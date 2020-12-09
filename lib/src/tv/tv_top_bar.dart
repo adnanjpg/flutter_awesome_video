@@ -36,10 +36,7 @@ class _TvTopBarState extends State<TvTopBar> {
               child: !widget.controller.hasSubtitles
                   ? Container()
                   : SubtitleButton()),
-          Container(
-              child: !widget.controller.showSkipButtons
-                  ? Container()
-                  : NextButton(isRtl: widget.controller.isRtl)),
+          NextButton(widget.controller),
           Expanded(
               child: SafeArea(
             child: Padding(

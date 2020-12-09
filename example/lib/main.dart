@@ -53,6 +53,14 @@ class _HomePageState extends State<HomePage> {
               'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
           subtitleUrl: "https://wecast.ch/posters/vtt.vtt",
         ),
+        PlayerItem(
+          startAt: Duration(seconds: 2),
+          title: 'video 2',
+          aspectRatio: 16 / 4,
+          url:
+              'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
+          subtitleUrl: "https://wecast.ch/posters/vtt.vtt",
+        ),
         // PlayerItem(
         //   title: 'video 3',
         //   aspectRatio: 16 / 9,
