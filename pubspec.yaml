@@ -9,16 +9,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  video_player: ^0.10.2+1
-  flutter_bloc: ^6.0.1
-  equatable: ^1.2.3
-  bloc: ^6.0.1
-  wakelock: ^0.1.4+2
-  subtitle_wrapper_package: ^1.0.3
+  video_player: ^2.0.2
+  flutter_bloc: ^7.0.0
+  equatable: ^2.0.0
+  bloc: ^7.0.0
+  wakelock: ^0.4.0
+  subtitle_wrapper_package: ^2.0.0
   toast: ^0.1.5
-  fullscreen: ^1.0.1
+  fullscreen: ^1.0.3
   flutter_ui_mode_manager: ^1.0.0
-  step_progress_indicator: ^0.2.4+7
+  step_progress_indicator: ^0.2.5+8
 
 dev_dependencies:
   flutter_test:

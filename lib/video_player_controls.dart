@@ -129,8 +129,6 @@ class _VideoPlayerInterfaceState extends State<VideoPlayerInterface>
   // video player controller
   VideoPlayerController _videoPlayerController;
 
-  FullScreen fullScreen = FullScreen();
-
   bool isPlaying = false;
 
   UiMode uiMode;
@@ -199,10 +197,10 @@ class _VideoPlayerInterfaceState extends State<VideoPlayerInterface>
     await _videoPlayerController.setLooping(_controller.isLooping);
 
     if ((_controller.autoInitialize || _controller.autoPlay) &&
-        !_videoPlayerController.value.initialized)
+        !_videoPlayerController.value.isInitialized)
       await _videoPlayerController.initialize();
 
-    if (!_controller.autoPlay && !_videoPlayerController.value.initialized)
+    if (!_controller.autoPlay && !_videoPlayerController.value.isInitialized)
       await _videoPlayerController.initialize();
 
     if (_controller.autoPlay) await _videoPlayerController.play();
@@ -565,12 +563,12 @@ class _VideoPlayerInterfaceState extends State<VideoPlayerInterface>
 
   void enterFullScreen() {
     //
-    fullScreen.enterFullScreen(FullScreenMode.EMERSIVE_STICKY);
+    FullScreen.enterFullScreen(FullScreenMode.EMERSIVE_STICKY);
   }
 
   void exitFullScreen() async {
     //
-    fullScreen.exitFullScreen();
+    FullScreen.exitFullScreen();
   }
 
   void initialize(String link, Skip skip) async {
