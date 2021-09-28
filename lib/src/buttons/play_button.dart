@@ -38,13 +38,16 @@ class _PlayButtonState extends State<PlayButton>
     animationController =
         AnimationController(vsync: this, duration: Duration(milliseconds: 200));
     animation = Tween<double>(begin: 0, end: 1).animate(animationController);
-    _node = FocusNode(onKey: (node, event) {
-      //
-      BlocProvider.of<ShowcontrolsBloc>(context).add(ShowcontrolsEventStart());
-      handleKeyEvent(node, event, context);
+    _node = FocusNode(
+      onKeyEvent: (node, event) {
+        //
+        BlocProvider.of<ShowcontrolsBloc>(context)
+            .add(ShowcontrolsEventStart());
+        handleKeyEvent(node, event, context);
 
-      return false;
-    });
+        return KeyEventResult.handled;
+      },
+    );
     _node.addListener(_onFocusChange);
     // super.initState();
   }

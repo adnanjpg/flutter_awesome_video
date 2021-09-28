@@ -28,17 +28,19 @@ class _ProgressSliderState extends State<ProgressSlider>
   void initState() {
     //
     super.initState();
-    _node = FocusNode(onKey: (node, event) {
-      //
-      if (event is RawKeyDownEvent) {
-        BlocProvider.of<ShowcontrolsBloc>(context)
-            .add(ShowcontrolsEventStart());
-        handleKeyEvent(node, event, context);
-        handlArrowKeys(node, event, context);
-        return false;
-      }
-      return false;
-    });
+    _node = FocusNode(
+      onKeyEvent: (node, event) {
+        //
+        if (event is RawKeyDownEvent) {
+          BlocProvider.of<ShowcontrolsBloc>(context)
+              .add(ShowcontrolsEventStart());
+          handleKeyEvent(node, event, context);
+          handlArrowKeys(node, event, context);
+          return KeyEventResult.handled;
+        }
+        return KeyEventResult.ignored;
+      },
+    );
     _node.addListener(_onFocusChange);
   }
 

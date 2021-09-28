@@ -37,12 +37,15 @@ class _TvPlayButtonState extends State<TvPlayButton>
     animationController =
         AnimationController(vsync: this, duration: Duration(milliseconds: 200));
     animation = Tween<double>(begin: 0, end: 1).animate(animationController);
-    _node = FocusNode(onKey: (node, event) {
-      //
-      BlocProvider.of<ShowcontrolsBloc>(context).add(ShowcontrolsEventStart());
-      handleKeyEvent(node, event, context);
-      return false;
-    });
+    _node = FocusNode(
+      onKeyEvent: (node, event) {
+        //
+        BlocProvider.of<ShowcontrolsBloc>(context)
+            .add(ShowcontrolsEventStart());
+        handleKeyEvent(node, event, context);
+        return KeyEventResult.handled;
+      },
+    );
     _node.addListener(_onFocusChange);
     // super.initState();
   }

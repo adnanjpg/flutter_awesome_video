@@ -8,7 +8,7 @@ import 'package:video_player_controls/bloc/pause_video/pause_video_bloc.dart';
 import 'package:video_player_controls/bloc/play_video/play_video_bloc.dart';
 import 'package:video_player_controls/bloc/previous_video/previous_video_bloc.dart';
 
-Future<bool> handleKeyEvent(FocusNode node, RawKeyEvent event, context) async {
+Future<bool> handleKeyEvent(FocusNode node, KeyEvent event, context) async {
   if (event.logicalKey == LogicalKeyboardKey.mediaRewind) {
     // Rewind
     BlocProvider.of<FastRewindBloc>(context).add(FastRewindEventLoad(10));
@@ -41,7 +41,7 @@ Future<bool> handleKeyEvent(FocusNode node, RawKeyEvent event, context) async {
   return false;
 }
 
-Future<bool> handlArrowKeys(FocusNode node, RawKeyEvent event, context) async {
+Future<bool> handlArrowKeys(FocusNode node, KeyEvent event, context) async {
   if (event.logicalKey == LogicalKeyboardKey.arrowLeft) {
     // Rewind
     BlocProvider.of<FastRewindBloc>(context).add(FastRewindEventLoad(10));
